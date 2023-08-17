@@ -14,6 +14,7 @@ class RestaurantWithRestaurateurUserTests(TestCase):
         self.user = User.objects.create_user(username='res1', password='restpass', role='restaurateur')
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
+
         self.restaurant = Restaurant.objects.create(name='Restaurant 1', user=self.user)
         self.dish = Dish.objects.create(name='Dish 1', description='Delicious dish', price='9.99', user=self.user)
         self.menu = Menu.objects.create(restaurant=self.restaurant, day_of_week=1, user=self.user)

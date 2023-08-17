@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'inforce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'inforce',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
+        'NAME': 'kkflaqym',
+        'USER': 'kkflaqym',
+        'PASSWORD': 'HK49eHib6wAUQjD4JyRfiBfN9WCwV3xs',
+        'HOST': 'snuffleupagus.db.elephantsql.com',
         'PORT': '5432'
     }
 }
