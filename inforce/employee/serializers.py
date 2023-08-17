@@ -4,6 +4,7 @@ from .models import Vote
 
 class VoteSerializer(serializers.ModelSerializer):
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Vote
-        fields = ('user', 'menu')
+        fields = '__all__'
