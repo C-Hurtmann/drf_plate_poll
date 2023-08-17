@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
-from .models import *
-from .serializers import *
+from .models import Restaurant, Dish, Menu
+from .serializers import RestaurantSerializer, DishSerializer, MenuSerializer
 from .permissions import IsRestauratorOrReadOnly
 # Create your views here.
 
