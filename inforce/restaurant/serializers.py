@@ -3,18 +3,24 @@ from rest_framework import serializers
 from .models import Restaurant, Menu, Dish
 
 class RestaurantSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Restaurant
-        fields = ('pk', 'name')
+        fields = '__all__'
 
 
 class MenuSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Menu
-        fields = ('pk', 'restaurant', 'day_of_week', 'dishes')
+        fields = '__all__'
 
 
 class DishSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Dish
-        fields = ('pk', 'name', 'description', 'price')
+        fields = '__all__'
