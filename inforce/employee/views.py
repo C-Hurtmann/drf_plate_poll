@@ -10,7 +10,7 @@ from .permissions import IsEmployee
 # Create your views here.
 
 class VoteViewSet(viewsets.ModelViewSet):
-    queryset = Vote.objects.all()
+    queryset = Vote.get_today_votes()
     serializer_class = VoteSerializer
     permission_classes = (IsAuthenticated, IsEmployee)
     

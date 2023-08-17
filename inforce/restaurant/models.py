@@ -20,6 +20,7 @@ class Restaurant(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+
 class Menu(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, default=1)
     day_of_week = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(7)])

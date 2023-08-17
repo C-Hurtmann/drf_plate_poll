@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django.conf import settings
 
@@ -13,3 +15,8 @@ class Vote(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['create_date', 'user'], name='Vote of user on date')
         ]
+    
+    @classmethod
+    def get_today_votes(cls):
+        today = datetime.now().date()
+        return cls.objects.filter(create_date__date=today)

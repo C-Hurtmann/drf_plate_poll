@@ -6,9 +6,9 @@ from .views import RestaurantViewSet, DishViewSet, MenuViewSet
 
 router = routers.SimpleRouter()
 
-router.register(r'dish', DishViewSet)
-router.register(r'menu', MenuViewSet)
-router.register(r'', RestaurantViewSet)
+router.register(r'dish', DishViewSet, basename='dish')
+router.register(r'menu', MenuViewSet, basename='menu')
+router.register(r'', RestaurantViewSet, basename='restaurant')
 
 
 
