@@ -7,4 +7,3 @@ class VoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vote
         fields = ('user', 'menu')
-        read_only_fields = ('user',)

@@ -5,16 +5,16 @@ from .models import Restaurant, Menu, Dish
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
-        fields = ('name',)
+        fields = ('pk', 'name')
 
 
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menu
-        fields = ('restaurant', 'day_of_week', 'dishes')
+        fields = ('pk', 'restaurant', 'day_of_week', 'dishes')
 
 
 class DishSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dish
-        fields = ('name', 'description', 'price')
+        fields = ('pk', 'name', 'description', 'price')
