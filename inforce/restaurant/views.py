@@ -12,7 +12,9 @@ class RestaurantViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         user = self.request.user
-        return Restaurant.objects.filter(user=user)
+        if user.role == 'restaurateur':
+            return Restaurant.objects.filter(user=user)
+        return Restaurant.objects.all()
 
 class DishViewSet(viewsets.ModelViewSet):
     serializer_class = DishSerializer
@@ -20,7 +22,9 @@ class DishViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         user = self.request.user
-        return Dish.objects.filter(user=user)
+        if user.role == 'restaurateur':
+            return Dish.objects.filter(user=user)
+        return Dish.objects.all()
 
 class MenuViewSet(viewsets.ModelViewSet):
     serializer_class = MenuSerializer
@@ -28,4 +32,6 @@ class MenuViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         user = self.request.user
-        return Menu.objects.filter(user=user)
+        if user.role == 'restaurateur':
+            return Menu.objects.filter(user=user)
+        return Menu.objects.all()

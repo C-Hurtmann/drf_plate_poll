@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'rest_framework',
     'rest_framework.authtoken',
-    'dj_rest_auth',
-    'allauth',
     'djoser',
 ]
 
