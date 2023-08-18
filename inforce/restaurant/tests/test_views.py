@@ -2,7 +2,6 @@ import pytest
 from django.urls import reverse
 from rest_framework import status
 from django.contrib.auth import get_user_model
-from django.conf import settings
 
 from restaurant.models import Restaurant, Dish, Menu
 
