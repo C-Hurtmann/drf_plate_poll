@@ -6,9 +6,7 @@ from .views import VoteViewSet
 
 router = routers.SimpleRouter()
 
-router.register(r'vote', VoteViewSet)
+router.register(r"vote", VoteViewSet)
 
 
-urlpatterns = [
-    path('employee/', include(router.urls))
-    ]
+urlpatterns = [path("employee/", include(router.urls))]

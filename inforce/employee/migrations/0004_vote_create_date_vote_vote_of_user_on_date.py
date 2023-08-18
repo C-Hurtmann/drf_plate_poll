@@ -5,19 +5,22 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('employee', '0003_initial'),
+        ("employee", "0003_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='vote',
-            name='create_date',
-            field=models.DateTimeField(default=datetime.datetime(2023, 8, 17, 18, 48, 10, 287092)),
+            model_name="vote",
+            name="create_date",
+            field=models.DateTimeField(
+                default=datetime.datetime(2023, 8, 17, 18, 48, 10, 287092)
+            ),
         ),
         migrations.AddConstraint(
-            model_name='vote',
-            constraint=models.UniqueConstraint(fields=('create_date', 'user'), name='Vote of user on date'),
+            model_name="vote",
+            constraint=models.UniqueConstraint(
+                fields=("create_date", "user"), name="Vote of user on date"
+            ),
         ),
     ]

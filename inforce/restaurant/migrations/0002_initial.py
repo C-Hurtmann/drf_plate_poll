@@ -6,42 +6,59 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('restaurant', '0001_initial'),
+        ("restaurant", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='restaurant',
-            name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="restaurant",
+            name="user",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
         migrations.AddField(
-            model_name='menu',
-            name='dishes',
-            field=models.ManyToManyField(to='restaurant.dish'),
+            model_name="menu",
+            name="dishes",
+            field=models.ManyToManyField(to="restaurant.dish"),
         ),
         migrations.AddField(
-            model_name='menu',
-            name='restaurant',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='restaurant.restaurant'),
+            model_name="menu",
+            name="restaurant",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="restaurant.restaurant",
+            ),
         ),
         migrations.AddField(
-            model_name='menu',
-            name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="menu",
+            name="user",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
         migrations.AddField(
-            model_name='dish',
-            name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="dish",
+            name="user",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
         migrations.AddConstraint(
-            model_name='menu',
-            constraint=models.UniqueConstraint(fields=('restaurant', 'day_of_week'), name='Weekday menu for restaurant'),
+            model_name="menu",
+            constraint=models.UniqueConstraint(
+                fields=("restaurant", "day_of_week"), name="Weekday menu for restaurant"
+            ),
         ),
     ]

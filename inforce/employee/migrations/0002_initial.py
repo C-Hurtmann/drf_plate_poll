@@ -5,18 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('restaurant', '0001_initial'),
-        ('employee', '0001_initial'),
+        ("restaurant", "0001_initial"),
+        ("employee", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='vote',
-            name='menu',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='restaurant.menu'),
+            model_name="vote",
+            name="menu",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="restaurant.menu"
+            ),
         ),
     ]
