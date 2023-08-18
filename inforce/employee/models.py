@@ -1,7 +1,6 @@
-from datetime import datetime
-
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 
 from restaurant.models import Menu
 
@@ -21,5 +20,5 @@ class Vote(models.Model):
 
     @classmethod
     def get_today_votes(cls):
-        today = datetime.now().date()
+        today = timezone.now().date()
         return cls.objects.filter(create_date__date=today)

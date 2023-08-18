@@ -6,11 +6,10 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_HOST: snuffleupagus.db.elephantsql.com
-      POSTGRES_DB: kkflaqym
-      POSTGRES_USER: kkflaqym
-      POSTGRES_PASSWORD: HK49eHib6wAUQjD4JyRfiBfN9WCwV3xs
-
+      POSTGRES_HOST: localhost
+      POSTGRES_DB: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
   api:
     build: .
     command: python3 inforce/manage.py runserver 0.0.0.0:8000
