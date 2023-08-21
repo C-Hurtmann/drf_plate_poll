@@ -33,3 +33,10 @@ python3 manage.py migrate
 ## Usage
 
 Go to http://localhost:8000/swagger/ of http://localhost:8000/redoc/ to see all functions.
+
+## Tests
+
+Run tests from root prohect directory
+~~~
+pytest
+~~~
