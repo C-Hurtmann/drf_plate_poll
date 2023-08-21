@@ -398,6 +398,18 @@ python-jose = ["python-jose (==3.3.0)"]
 test = ["cryptography", "pytest", "pytest-cov", "pytest-django", "pytest-xdist", "tox"]
 
 [[package]]
+name = "djangorestframework-version-transforms"
+version = "0.5.0"
+description = "A library to enable the use of delta transformations for versioning of Django Rest Framwork API representations."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "djangorestframework-version-transforms-0.5.0.tar.gz", hash = "sha256:f2f769194dabc88ac38818388e7ca9fdc20e91c77839d20a2e50440e4637fe3e"},
+    {file = "djangorestframework_version_transforms-0.5.0-py2.py3-none-any.whl", hash = "sha256:f8b7bc17541da25e08ba1fdff52a17e45db71bb05c634e18f68a295a79c066fd"},
+]
+
+[[package]]
 name = "djoser"
 version = "2.2.0"
 description = "REST implementation of Django authentication system."
@@ -974,4 +986,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "19a475a3a30f1ee17f6993aec6b450484737eb8ebeeb0f35f7f50d4f5811d7d0"
+content-hash = "641dd8ab8217011245baa31a4f2610253a261c0e432cf79058fda30cf334e2d7"

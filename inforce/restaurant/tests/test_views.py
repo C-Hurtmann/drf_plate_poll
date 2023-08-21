@@ -17,11 +17,6 @@ def test_user():
     return User.objects.create_user(
         username="res1", password="test123", role="restaurateur"
     )
-@pytest.fixture
-def test_user_two():
-    return User.objects.create_user(
-        username="res2", password="test123", role="restaurateur"
-    )
 
 @pytest.mark.django_db
 def test_create_restaurant(api_client, test_user):
@@ -61,3 +56,24 @@ def test_create_menu(api_client, test_user):
     assert response.status_code == status.HTTP_201_CREATED
     assert Menu.objects.count() == 1
     assert Menu.objects.get().day_of_week == 2
+
+@pytest.mark.django_db
+def test_get_restaurants(api_client, test_user):
+    api_client.force_authenticate(user=test_user)
+    url = reverse("restaurant-list")
+    response = api_client.get(url)
+    assert response.status_code == status.HTTP_200_OK
+
+@pytest.mark.django_db
+def test_get_dishes(api_client, test_user):
+    api_client.force_authenticate(user=test_user)
+    url = reverse("dish-list")
+    response = api_client.get(url)
+    assert response.status_code == status.HTTP_200_OK
+
+@pytest.mark.django_db
+def test_get_menus(api_client, test_user):
+    api_client.force_authenticate(user=test_user)
+    url = reverse("menu-list")
+    response = api_client.get(url)
+    assert response.status_code == status.HTTP_200_OK
