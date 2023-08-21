@@ -1,5 +1,4 @@
 from djoser.serializers import UserCreateSerializer
-from rest_framework import serializers
 
 
 class UserCreateSerializer(UserCreateSerializer):

@@ -40,12 +40,13 @@ def test_create_dish(api_client, test_user):
 
 @pytest.mark.django_db
 def test_create_menu(api_client, test_user):
+    api_client.force_authenticate(user=test_user)
+
     restaurant = Restaurant.objects.create(name="Restaurant 1", user=test_user)
     dish = Dish.objects.create(
         name="Dish 1", description="Delicious dish", price="9.99", user=test_user
     )
 
-    api_client.force_authenticate(user=test_user)
     url = reverse("menu-list")
     data = {
         "restaurant": restaurant.id,
